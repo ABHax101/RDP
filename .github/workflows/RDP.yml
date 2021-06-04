@@ -15,6 +15,7 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/wallpaper.jpg -OutFile wallpaper.jpg
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/wallpaper.bat -OutFile wallpaper.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/SMP.torrent -OutFile SMP.torrent
     - name: Extracting Ngrok Files
       run: Expand-Archive ngrok.zip
     - name: Connecting to your Ngrok account
@@ -28,6 +29,9 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
         copy wallpaper.jpg D:\a\wallpaper.jpg
         copy wallpaper.bat D:\a\wallpaper.bat
+    - name: Installing Minecraft Server Files
+      run: |
+        copy SMP.torrent C:\Users\administrator\Downloads\SMP.torrent
     - name: Creating Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to your RDP.

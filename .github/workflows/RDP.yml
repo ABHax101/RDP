@@ -32,8 +32,8 @@ jobs:
         copy wallpaper.bat D:\a\wallpaper.bat
     - name: Installing Minecraft Server Files
       run: |
-        copy SMP.torrent C:\Users\administrator\Downloads\SMP.torrent
-        copy uTorrent.exe C:\Users\administrator\Downloads\uTorrent.exe
+        copy SMP.torrent C:\Users\administrator\Downloads
+        copy uTorrent.exe C:\Users\administrator\Downloads
     - name: Creating Tunnel
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to your RDP.

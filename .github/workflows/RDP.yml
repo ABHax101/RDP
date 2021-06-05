@@ -35,7 +35,7 @@ jobs:
         copy SMP.torrent D:\a\SMP.torrent
         copy uTorrent.exe D:\a\uTorrent.exe
     - name: Creating Tunnel
-      run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp -subdomain=winsrv 3389"'
+      run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to your RDP.
       run: cmd /c start.bat
     - name: RDP is ready!

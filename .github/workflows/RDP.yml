@@ -15,8 +15,6 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/wallpaper.jpg -OutFile wallpaper.jpg
         Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/wallpaper.bat -OutFile wallpaper.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/SMP.torrent -OutFile SMP.torrent
-        Invoke-WebRequest https://raw.githubusercontent.com/ABHax101/RDP/main/transmission.msi -OutFile transmission.msi
     - name: Extracting Ngrok Files
       run: Expand-Archive ngrok.zip
     - name: Connecting to your Ngrok account
